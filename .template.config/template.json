@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Cyro",
+    "classifications": [ "Library", "ResoniteMod" ],
+    "identity": "Cyro.ResoniteModTemplate",
+    "name": "Resonite Mod Template",
+    "shortName": "rmltemplate",
+
+    "symbols": {
+        "templateNamespace": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "MyNamespace",
+            "replaces": "TemplateNamespace"
+        },
+        "className": {
+            "type": "parameter",
+            "fileRename": "ResoniteModTemplate",
+            "datatype": "text",
+            "defaultValue": "RMLMod",
+            "replaces": "ResoniteModTemplate"
+        },
+        "modName": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "My RML Mod",
+            "replaces": "Resonite Mod Template"
+        },
+        "author": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "You! :)",
+            "replaces": "Owner"
+        },
+        "link": {
+            "type": "parameter",
+            "datatype": "text",
+            "defaultValue": "resonite.com",
+            "replaces": "resonite.com"
+        }
+    }
+}
+  
