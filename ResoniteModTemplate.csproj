@@ -4,11 +4,15 @@
     <TargetFramework>net472</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>11</LangVersion>
   </PropertyGroup>
 
+  <!--This will test for the default Steam installation paths for Resonite on Windows and Linux.-->
+  <!--If you have Resonite installed in a non-default location, you can comment these out and manually define a path instead.-->
   <PropertyGroup Condition="'$(ResonitePath)'==''">
-    <ResonitePath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Resonite\')">C:\Program Files (x86)\Steam\steamapps\common\Resonite\</ResonitePath>
+    <ResonitePath Condition="'$(OS)' == 'Windows_NT' and Exists('C:\Program Files (x86)\Steam\steamapps\common\Resonite\')">C:\Program Files (x86)\Steam\steamapps\common\Resonite\</ResonitePath> 
+    <ResonitePath Condition="'$(OS)' != 'Windows_NT' and Exists('$(HOME)/.local/share/Steam/steamapps/common/Resonite/')">$(HOME)/.local/share/Steam/steamapps/common/Resonite/</ResonitePath>
+    <!--<ResonitePath>/Uncomment/For/Custom/Resonite/Install-Path/Here/</ResonitePath>-->
   </PropertyGroup>
 
   <ItemGroup>
